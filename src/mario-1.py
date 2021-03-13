@@ -40,6 +40,7 @@ class Mario:
 
 
 def start_game():
+    print("Hello Pan Bogdan")
     canvas.fill(BLACK)
 
     while True:
