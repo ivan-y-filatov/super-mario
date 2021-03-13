@@ -20,7 +20,7 @@ class Mario:
     def __init__(self):
         self.mario_img = pygame.image.load('../resources/images/mario.png')
         self.mario_img_rect = self.mario_img.get_rect()
-        self.mario_img_rect.left = 20
+        self.mario_img_rect.left = WINDOW_WIDTH / 2
         self.mario_img_rect.top = WINDOW_HEIGHT / 2 - 100
         self.down = True
         self.up = False
@@ -29,13 +29,13 @@ class Mario:
 
     def update(self):
         canvas.blit(self.mario_img, self.mario_img_rect)
-        if self.mario_img_rect.top >= 10 and self.up:
+        if self.up and self.mario_img_rect.top >= 10:
             self.mario_img_rect.top -= 10
-        if self.mario_img_rect.bottom <= WINDOW_HEIGHT - 10 and self.down:
-            self.mario_img_rect.bottom += 10
-        if self.mario_img_rect.left >= 10 and self.left:
+        if self.down and self.mario_img_rect.bottom <= WINDOW_HEIGHT - 10:
+           self.mario_img_rect.bottom += 10
+        if self.left and self.mario_img_rect.left >= 10:
             self.mario_img_rect.left -= 10
-        if self.mario_img_rect.right <= WINDOW_WIDTH - 10 and self.right:
+        if self.right and self.mario_img_rect.right <= WINDOW_WIDTH - 10:
             self.mario_img_rect.right += 10
 
 
